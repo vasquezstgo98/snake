@@ -3,7 +3,7 @@ package com.isa.snake.view;
 /**
 * Clase AboutView
 * @author [Jorge, Marco, Erik, Carlos]
-* @version [0.1]
+* @version [0.5]
 */
 import javax.swing.*;
 import java.awt.*;

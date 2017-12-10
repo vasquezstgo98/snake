@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
 * Clase Snake
 * @author [Jorge, Marco, Erik, Carlos]
-* @version [0.1]
+* @version [0.5]
 */
 public class Snake {
   // ArrayList de Point para almacenar el largo de la serpiente

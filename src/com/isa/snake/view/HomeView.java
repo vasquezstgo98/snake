@@ -2,12 +2,12 @@ package com.isa.snake.view;
 
 import javax.swing.*;
 import java.awt.*;
-import com.isa.snake.controller.GameController;
+import com.isa.snake.controller.ApplicationController;
 
 /**
 * Clase HomeView
 * @author [Jorge, Marco, Erik, Carlos]
-* @version [0.1]
+* @version [0.5]
 */
 
 //CLase de la vista principal
@@ -21,6 +21,8 @@ public class HomeView extends JFrame {
     this.setSize(800, 600);
     this.setLocationRelativeTo(null);
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    Container cp = getContentPane();
 
     inputName = new JTextField(20);
     aboutButton = new JButton("Acerca de...");
@@ -45,14 +47,17 @@ public class HomeView extends JFrame {
     playButton.setActionCommand("play");
     panelBotones.add(playButton);
 
-    Container cp = getContentPane();
     cp.add(panelAbout, BorderLayout.NORTH);
     cp.add(panelDatos, BorderLayout.CENTER);
     cp.add(panelBotones, BorderLayout.SOUTH);
   }
 
-  public void setController(GameController controller) {
+  public void setController(ApplicationController controller) {
     playButton.addActionListener(controller);
     aboutButton.addActionListener(controller);
+  }
+
+  public JTextField getInputName() {
+    return inputName;
   }
 }

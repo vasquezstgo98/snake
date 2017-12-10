@@ -5,7 +5,7 @@ import java.awt.Point;
 /**
 * Clase Food
 * @author [Jorge, Marco, Erik, Carlos]
-* @version [0.1]
+* @version [0.5]
 */
 public class Food {
   // Comida para Snake
@@ -32,7 +32,7 @@ public class Food {
   * @param snackX[int]
   * @param snackY[int]
   */
-  public void setFood(int snackX, int snackY) {
+  public void setSnack(int snackX, int snackY) {
     snack.x = snackX;
     snack.y = snackY;
   }
