@@ -1,5 +1,7 @@
 package com.isa.snake;
 
+import com.isa.snake.controller.GameController;
+
 /**
 * Clase Application
 * @author [Jorge, Marco, Erik, Carlos]
@@ -7,5 +9,7 @@ package com.isa.snake;
 */
 public class Application {
   public static void main(String[] args) {
+    GameController control = new GameController();
+    control.start();
   }
 }
