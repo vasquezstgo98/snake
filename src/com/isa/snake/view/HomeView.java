@@ -2,8 +2,7 @@ package com.isa.snake.view;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import com.isa.snake.controller.GameController;
 
 /**
 * Clase HomeView
@@ -12,10 +11,10 @@ import java.awt.event.ActionEvent;
 */
 
 //CLase de la vista principal
-public class HomeView extends JFrame implements ActionListener {
-  JTextField inputName = new JTextField(20);
-  JButton aboutButton = new JButton("Acerca de...");
-  JButton playButton = new JButton("JUGAR");
+public class HomeView extends JFrame {
+  JTextField inputName;
+  JButton aboutButton;
+  JButton playButton;
 
   public HomeView() {
     super("Snake");
@@ -23,12 +22,15 @@ public class HomeView extends JFrame implements ActionListener {
     this.setLocationRelativeTo(null);
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+    inputName = new JTextField(20);
+    aboutButton = new JButton("Acerca de...");
+    playButton = new JButton("JUGAR");
     ImageIcon imagen = new ImageIcon("../assets/snake1.jpg");
     JLabel etiqueta = new JLabel(imagen);
 
     JPanel panelAbout = new JPanel();
     panelAbout.setLayout(new BorderLayout());
-    aboutButton.addActionListener(this);
+    aboutButton.setActionCommand("about");
     panelAbout.add(aboutButton);
 
     JPanel panelDatos = new JPanel();
@@ -40,7 +42,7 @@ public class HomeView extends JFrame implements ActionListener {
     panelBotones.setLayout(new FlowLayout());
     panelBotones.add(new JLabel("Nombre:"));
     panelBotones.add(inputName);
-    playButton.addActionListener(this);
+    playButton.setActionCommand("play");
     panelBotones.add(playButton);
 
     Container cp = getContentPane();
@@ -49,15 +51,8 @@ public class HomeView extends JFrame implements ActionListener {
     cp.add(panelBotones, BorderLayout.SOUTH);
   }
 
-  public void actionPerformed(ActionEvent e) {
-    Object button = e.getSource();
-
-    if (button == playButton) {
-      if (!inputName.getText().toString().equals("")) {
-      }
-    }
-
-    else if (button == aboutButton) {
-    }
+  public void setController(GameController controller) {
+    playButton.addActionListener(controller);
+    aboutButton.addActionListener(controller);
   }
 }
