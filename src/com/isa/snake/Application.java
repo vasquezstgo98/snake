@@ -1,6 +1,7 @@
 package com.isa.snake;
 
 import com.isa.snake.controller.ApplicationController;
+import com.isa.snake.controller.ConnectionController;
 
 /**
 * Clase Application
@@ -9,7 +10,8 @@ import com.isa.snake.controller.ApplicationController;
 */
 public class Application {
   public static void main(String[] args) {
-    ApplicationController control = new ApplicationController();
+    ConnectionController con = new ConnectionController();
+    ApplicationController control = new ApplicationController(con);
     control.start();
   }
 }

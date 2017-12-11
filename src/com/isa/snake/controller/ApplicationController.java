@@ -2,6 +2,7 @@ package com.isa.snake.controller;
 
 import com.isa.snake.view.HomeView;
 import com.isa.snake.view.AboutView;
+import com.isa.snake.controller.ConnectionController;
 import java.awt.event.ActionListener;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
@@ -14,8 +15,14 @@ import java.awt.event.ActionEvent;
 public class ApplicationController implements ActionListener {
   HomeView hv;
   AboutView av;
+  ConnectionController con;
+
+  public ApplicationController(ConnectionController con) {
+    this.con = con;
+  }
 
   public void start() {
+    con.openConnection();
     home();
   }
 
