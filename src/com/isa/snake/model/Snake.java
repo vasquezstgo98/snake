@@ -11,10 +11,6 @@ import java.util.ArrayList;
 public class Snake {
   // ArrayList de Point para almacenar el largo de la serpiente
   private ArrayList<Point> large = new ArrayList<Point>();
-  // Posición en X de la serpiente en la ventana
-  private int positionX = 0;
-  // Posición en Y de la serpiente en la ventana
-  private int positionY = 0;
 
   /**
   * Constructor de Snake
@@ -30,37 +26,5 @@ public class Snake {
   */
   public ArrayList<Point> getLarge() {
     return large;
-  }
-
-  /**
-  * Método para establecer la posición en X de la serpiente
-  * @param positionX[int]
-  */
-  public void setPositionX(int positionX) {
-    this.positionX = positionX;
-  }
-
-  /**
-  * Método para establecer la posición en Y de la serpiente
-  * @param positionY[int]
-  */
-  public void setPositionY(int positionY) {
-    this.positionY = positionY;
-  }
-
-  /**
-  * Método para obtener la posición en X de la serpiente
-  * @return [int]
-  */
-  public int getPositionX() {
-    return positionX;
-  }
-
-  /**
-  * Método para obtener la posición en Y de la serpiente
-  * @return [int]
-  */
-  public int getPositionY() {
-    return positionY;
   }
 }
