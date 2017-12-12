@@ -22,7 +22,6 @@ public class ApplicationController implements ActionListener {
   }
 
   public void start() {
-    con.openConnection();
     home();
   }
 

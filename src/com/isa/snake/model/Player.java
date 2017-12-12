@@ -1,5 +1,7 @@
 package com.isa.snake.model;
 
+import com.isa.snake.controller.ConnectionController;
+
 /**
 * Clase Player
 * @author [Jorge, Marco, Erik, Carlos]
@@ -10,6 +12,12 @@ public class Player {
   private String name;
   // Puntuación del jugador
   private int score;
+  // Conexión a SQLite
+  ConnectionController con;
+
+  public Player(ConnectionController con) {
+    this.con = con;
+  }
 
   /**
   * Método para validar que el nombre sea diferente  una cadena vacia
@@ -44,5 +52,15 @@ public class Player {
   */
   public int getScore() {
     return score;
+  }
+
+  /**
+  * Método para guardar el jugador en la base de datos
+  */
+
+  public void save() {
+    con.openConnection();
+    con.savePlayer(this);
+    con.closeConnection();
   }
 }

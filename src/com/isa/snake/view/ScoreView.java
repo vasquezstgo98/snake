@@ -1,13 +1,13 @@
 package com.isa.snake.view;
 
+import javax.swing.*;
+import java.awt.*;
+
 /**
 * Clase AboutView
 * @author [Jorge, Marco, Erik, Carlos]
 * @version [0.5]
 */
-import javax.swing.*;
-import java.awt.*;
-
 public class ScoreView extends JFrame{
     public ScoreView(){
         super("ScoreView");
@@ -28,7 +28,7 @@ public class ScoreView extends JFrame{
                 results.add(new JLabel("-------", SwingConstants.CENTER));
             }
         }
-        
+
         JPanel regresar = new JPanel();
         regresar.setLayout(new GridLayout());
         regresar.add(new JButton("INICIO"));
