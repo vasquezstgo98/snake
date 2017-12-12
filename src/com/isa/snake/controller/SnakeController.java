@@ -16,16 +16,14 @@ import com.isa.snake.view.GameView;
 
 public class SnakeController implements KeyListener {
   Snake viborita;
-  GameView window;
   SnakeView view;
   // Posición en X de la serpiente en la ventana
   private int positionX = 0;
   // Posición en Y de la serpiente en la ventana
   private int positionY = 0;
 
-  public SnakeController(Snake viborita, GameView window, SnakeView view) {
+  public SnakeController(Snake viborita, SnakeView view) {
     this.viborita = viborita;
-    this.window = window;
     this.view = view;
   }
 
@@ -85,23 +83,29 @@ public class SnakeController implements KeyListener {
   * Mueve la serpiente en una dirección en base a los eventos del teclado
   * @param e[KeyEvent]
   */
-  public void directionMove(KeyEvent e) {
-    switch(e.getActionCommand()) {
-      case "up": setPositionX(0);
-                 setPositionY(-1);
-                 break;
+  public void keyPressed(KeyEvent e) {
+    switch(e.getKeyCode()) {
+      case KeyEvent.VK_UP: setPositionX(0);
+                           setPositionY(-1);
+                           break;
 
-      case "down": setPositionX(0);
-                   setPositionY(1);
-                   break;
+      case KeyEvent.VK_DOWN: setPositionX(0);
+                             setPositionY(1);
+                             break;
 
-      case "left": setPositionX(-1);
-                   setPositionY(0);
-                   break;
+      case KeyEvent.VK_LEFT: setPositionX(-1);
+                             setPositionY(0);
+                             break;
 
-      case "right": setPositionX(1);
-                    setPositionY(0);
-                    break;
+      case KeyEvent.VK_RIGHT: setPositionX(1);
+                              setPositionY(0);
+                              break;
     }
+  }
+
+  public void keyReleased(KeyEvent e) {
+  }
+
+  public void keyTyped(KeyEvent e) {
   }
 }

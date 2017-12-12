@@ -9,6 +9,5 @@ import java.util.ArrayList;
 */
 
 public class Game {
-  // Lista de jugadores
-  private ArrayList<Player> players = new ArrayList<Player>();
+  
 }
