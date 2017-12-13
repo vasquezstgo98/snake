@@ -13,7 +13,7 @@ public class AboutView extends JFrame{
   JButton homeButton = new JButton("Inicio");
 
     public AboutView(){
-        super("AboutView");
+        super("Snake :v");
         this.setSize(800, 600);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

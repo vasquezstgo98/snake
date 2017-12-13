@@ -15,7 +15,7 @@ public class ConnectionController {
   private final String url = "jdbc:sqlite:src/com/isa/snake/database/snake.db";
   Connection connect;
 
-  // Abrimos la conección
+  // Abrimos la conexión
   public void openConnection() {
     try {
       connect = DriverManager.getConnection(url);
@@ -28,7 +28,7 @@ public class ConnectionController {
     }
   }
 
-  // Cerramos la conección
+  // Cerramos la conexión
   public void closeConnection() {
     try {
       connect.close();
